@@ -1,0 +1,89 @@
+iniciar-programa
+
+define-nueva-instruccion gira-derecha como inicio
+  repetir 3 veces inicio
+    gira-izquierda;
+  fin;
+fin;
+
+define-nueva-instruccion gira-en-u como inicio
+  gira-izquierda;
+  gira-izquierda;
+fin;
+
+define-nueva-instruccion entregar-zumbador como inicio
+  mientras no-orientado-al-norte hacer inicio
+    gira-izquierda;
+  fin;
+  mientras frente-libre hacer inicio
+    avanza;
+  fin;
+  mientras no-orientado-al-este hacer inicio
+    gira-izquierda;
+  fin;
+  mientras frente-libre hacer inicio
+    avanza;
+    fin;
+ mientras no-orientado-al-sur hacer inicio
+    gira-izquierda;
+  fin;
+  mientras frente-libre hacer inicio
+    avanza;
+  fin;
+  deja-zumbador;
+  apagate;
+fin;
+
+inicia-ejecucion
+
+  mientras no-orientado-al-norte hacer inicio
+    gira-izquierda;
+  fin;
+  mientras frente-libre hacer inicio
+    avanza;
+  fin;
+  gira-izquierda;
+  mientras frente-libre hacer inicio
+    avanza;
+  fin;
+  gira-izquierda;
+
+  mientras no-orientado-al-sur hacer inicio
+    gira-izquierda;
+  fin;
+
+  repetir 1000 veces inicio
+
+
+
+    mientras frente-libre hacer inicio
+      avanza;
+    fin;
+    
+    si junto-a-zumbador entonces inicio
+      coge-zumbador;
+      entregar-zumbador;
+    fin;
+    
+    gira-en-u;
+    mientras frente-libre hacer inicio
+      avanza;
+    fin;
+
+    mientras no-orientado-al-este hacer inicio
+      gira-izquierda;
+    fin;
+
+    sí frente-libre entonces inicio
+      avanza;
+      mientras no-orientado-al-sur hacer inicio
+        gira-izquierda;
+      fin;
+    fin;
+
+  fin;
+
+  apagate;
+
+termina-ejecucion
+finalizar-programa
