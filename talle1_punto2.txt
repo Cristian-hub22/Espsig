@@ -74,7 +74,7 @@ inicia-ejecucion
       gira-izquierda;
     fin;
 
-    sí frente-libre entonces inicio
+     si frente-libre entonces inicio
       avanza;
       mientras no-orientado-al-sur hacer inicio
         gira-izquierda;
@@ -87,3 +87,5 @@ inicia-ejecucion
 
 termina-ejecucion
 finalizar-programa
+
+
