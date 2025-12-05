@@ -1,0 +1,43 @@
+iniciar-programa
+
+define-nueva-instruccion gira-derecha como inicio
+  repetir 3 veces inicio
+    gira-izquierda;
+  fin;
+fin;
+
+define-nueva-instruccion busca-salida como inicio
+  gira-derecha;
+
+ mientras no izquierda-libre hacer inicio
+    si frente-libre entonces inicio
+      avanza
+      fin
+    sino
+      gira-derecha;
+    fin;
+
+  gira-izquierda;
+  avanza;
+fin;
+
+inicia-ejecución
+
+  mientras no-orientado-al-este hacer inicio
+    gira-izquierda;
+  fin;
+
+  repetir 10 veces inicio
+    si frente-libre entonces inicio
+      avanza;
+    fin
+    sino inicio
+      busca-salida;
+      apágate;
+    fin;
+  fin;
+
+  apágate;
+
+termina-ejecución
+finalizar-programa
