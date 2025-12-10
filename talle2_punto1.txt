@@ -14,8 +14,9 @@ FinFunción
 
 Algoritmo PUNTO_2
 	Definir N, resultado Como Entero
-	Escribir 'Ingrese un número entero:'
+	Escribir "Ingrese un número entero:"
 	Leer N
 	resultado <- sumapares(N)
-	Escribir 'La sumatoria de los ', N, ' números pares desde el siguiente par es: ', resultado
+	Escribir "La sumatoria de los ", N, " números pares desde el siguiente par es: ", resultado
 FinAlgoritmo
+
