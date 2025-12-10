@@ -1,0 +1,21 @@
+Función sumatoria <- sumapares(N)
+	Definir i, num, inicio Como Entero
+	sumatoria <- 0
+	Si N % 2=0 Entonces
+		inicio <- N+2
+	SiNo
+		inicio <- N+1
+	FinSi
+	Para i=1 Hasta N Con Paso 1 Hacer
+		num <- inicio+(i-1)*2
+		sumatoria <- sumatoria+num
+	FinPara
+FinFunción
+
+Algoritmo PUNTO_2
+	Definir N, resultado Como Entero
+	Escribir 'Ingrese un número entero:'
+	Leer N
+	resultado <- sumapares(N)
+	Escribir 'La sumatoria de los ', N, ' números pares desde el siguiente par es: ', resultado
+FinAlgoritmo

@@ -1,0 +1,18 @@
+Funcion GenerarEscalera(N)
+    Definir i, j Como Entero
+	
+    Para i <- 1 Hasta N Con Paso 1 Hacer
+        Para j <- 1 Hasta i Con Paso 1 Hacer
+            Escribir Sin Saltar "*"
+        FinPara
+        Escribir "" 
+    FinPara
+FinFuncion
+
+Algoritmo PUNTO_2
+	
+    Escribir "Ingrese un número entero:"
+    Leer numero
+	
+    GenerarEscalera(numero)
+FinProceso

@@ -1,0 +1,131 @@
+Funcion valido <- esBisiesto(a)
+    Si (a % 4 = 0 Y a % 100 <> 0) O (a % 400 = 0) Entonces
+        valido <- Verdadero
+    SiNo
+        valido <- Falso
+    FinSi
+FinFuncion
+
+
+Funcion dias <- diasDelMes(m, a)
+    dias <- 0
+	
+    Si m = 1 Entonces
+        dias <- 31
+    FinSi
+	
+    Si m = 2 Entonces
+        Si esBisiesto(a) Entonces
+            dias <- 29
+        SiNo
+            dias <- 28
+        FinSi
+    FinSi
+	
+    Si m = 3 Entonces
+        dias <- 31
+    FinSi
+	
+    Si m = 4 Entonces
+        dias <- 30
+    FinSi
+	
+    Si m = 5 Entonces
+        dias <- 31
+    FinSi
+	
+    Si m = 6 Entonces
+        dias <- 30
+    FinSi
+	
+    Si m = 7 Entonces
+        dias <- 31
+    FinSi
+	
+    Si m = 8 Entonces
+        dias <- 31
+    FinSi
+	
+    Si m = 9 Entonces
+        dias <- 30
+    FinSi
+	
+    Si m = 10 Entonces
+        dias <- 31
+    FinSi
+	
+    Si m = 11 Entonces
+        dias <- 30
+    FinSi
+	
+    Si m = 12 Entonces
+        dias <- 31
+    FinSi
+	
+FinFuncion
+
+
+
+Funcion nombre <- nombreMes(m)
+    Segun m Hacer
+        1: nombre <- "enero"
+        2: nombre <- "febrero"
+        3: nombre <- "marzo"
+        4: nombre <- "abril"
+        5: nombre <- "mayo"
+        6: nombre <- "junio"
+        7: nombre <- "julio"
+        8: nombre <- "agosto"
+        9: nombre <- "septiembre"
+        10: nombre <- "octubre"
+        11: nombre <- "noviembre"
+        12: nombre <- "diciembre"
+        De Otro Modo:
+            nombre <- "mes inválido"
+    FinSegun
+FinFuncion
+
+
+Funcion valido <- fechaValida(d, m, a)
+    Si a < 1 Entonces
+        valido <- Falso
+    Sino
+		
+        Si m < 1 O m > 12 Entonces
+            valido <- Falso
+        Sino
+            maxDias <- diasDelMes(m, a)
+			
+            Si d >= 1 Y d <= maxDias Entonces
+                valido <- Verdadero
+            SiNo
+                valido <- Falso
+            FinSi
+			
+        FinSi
+		
+    FinSi
+	
+FinFuncion
+
+
+
+Algoritmo validar_fecha_con_funciones
+	
+    Definir d, m, a Como Entero
+	
+    Escribir "Ingrese día:"
+    Leer d
+
+    Escribir "Ingrese mes:"
+    Leer m
+
+    Escribir "Ingrese año:"
+    Leer a
+
+	Si fechaValida(d, m, a) Entonces
+        Escribir d, " de ", nombreMes(m), " de ", a
+    SiNo
+        Escribir "ERROR: fecha inválida."
+    FinSi
+FinAlgoritmo

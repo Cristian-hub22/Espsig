@@ -1,0 +1,41 @@
+Funcion resultado <- mcd(a, b)
+    Definir vtemporal Como Entero
+	
+    Mientras b <> 0 Hacer
+        vtemporal=b
+        b=a % b
+        a=vtemporal
+    FinMientras
+	
+    resultado=a
+FinFuncion
+
+
+Funcion r <- actualizar_mcd(mcd_actual, nuevo_numero)
+    Si mcd_actual = 0 Entonces
+        r=nuevo_numero
+    SiNo
+        r=mcd(mcd_actual, nuevo_numero)
+    FinSi
+FinFuncion
+
+
+Algoritmo hallar_mcd
+	
+    Definir numero, resultado Como Entero
+    resultado=0
+	
+    Escribir "Ingrese números positivos. Termine con un número negativo."
+	
+    Repetir
+        Leer numero
+		
+        Si numero > 0 Entonces
+            resultado=actualizar_mcd(resultado, numero)
+        FinSi
+		
+    Hasta Que numero < 0
+	
+    Escribir "El MCD de todos los números ingresados es: ", resultado
+	
+FinAlgoritmo

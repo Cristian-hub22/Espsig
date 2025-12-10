@@ -1,0 +1,46 @@
+Funcion r <- mcd(a, b)
+	Definir vtemporal Como Entero	
+    Mientras b <> 0 Hacer
+        vtemporal=b
+        b=a % b
+        a=vtemporal
+    FinMientras
+	
+    r <- a
+FinFuncion
+
+
+Funcion r <- mcm(a, b)
+    r=(a * b) / mcd(a, b)
+FinFuncion
+
+
+Funcion r <-actualizar_mcm(mcm_actual, nuevo_num)
+    Si mcm_actual = 1 Entonces
+        r=nuevo_num
+    Sino
+        r=mcm(mcm_actual, nuevo_num)
+    FinSi
+FinFuncion
+
+
+
+Algoritmo hallar_mcm_lista
+	
+    Definir numero, resultado Como Entero
+    resultado=1   
+	
+    Escribir "Ingrese números positivos. Termine con un número negativo."
+	
+    Repetir
+        Leer numero
+		
+        Si numero > 0 Entonces
+            resultado=actualizar_mcm(resultado, numero)
+        FinSi
+		
+    Hasta Que numero < 0
+	
+    Escribir "El MCM de todos los números ingresados es: ", resultado
+	
+FinAlgoritmo
