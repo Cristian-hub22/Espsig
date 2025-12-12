@@ -1,0 +1,14 @@
+n = int(input("Ingrese un número: "))
+num = n
+factors = []
+
+i = 2
+
+while num > 1:
+    if num % i == 0:    
+        factors.append(i)  
+        num = num // i     
+    else:
+        i = i + 1  
+
+print("Factores primos de", n, ":", factors)

@@ -1,0 +1,14 @@
+import math
+
+n = int(input("Ingrese el primer número (n): "))
+r = int(input("Ingrese el segundo número (r): "))
+
+if r > n:
+    print("No es posible: r no puede ser mayor que n.")
+else:
+    P = int(math.factorial(n) / math.factorial(n - r))
+
+    C = int(math.factorial(n) / (math.factorial(r) * math.factorial(n - r)))
+
+    print("Permutación P(n,r) =", P)
+    print("Combinación C(n,r) =", C)
